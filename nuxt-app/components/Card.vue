@@ -32,7 +32,7 @@ defineProps<{ post: Post }>()
   padding: 9px;
   position: relative;
   border-bottom: 1px solid #ced2d9;
-  color: var(--black);
+  color: var(--text);
   text-decoration: none;
 
   & .card__container {
@@ -48,7 +48,7 @@ defineProps<{ post: Post }>()
   & .card__cover--none {
     width: 100%;
     height: 231px;
-    background: var(--black);
+    background: var(--highlight);
   }
 
   & .card__title {

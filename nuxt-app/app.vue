@@ -89,6 +89,9 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
 
   --white: #fff;
   --black: #101112;
+  --background: #0f3d2e;
+  --text: #f2f7f5;
+  --highlight: #39d2b4;
   --gray-200: #ced2d9;
   --gray-600: #6e7683;
   --blue-600: #1e61cd;
@@ -99,9 +102,10 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
 }
 
 html {
-  background-color: var(--white);
+  background-color: var(--background);
   font-family: var(--font-family-sans), var(--font-family-serif), sans-serif;
   text-size-adjust: 100%;
+  color: var(--text);
 }
 
 body {
@@ -124,7 +128,7 @@ main {
   border-bottom: 1px solid #ced2d9;
 
   z-index: 10;
-  background: var(--white);
+  background: var(--background);
   position: fixed;
   left: 0;
   right: 0;
@@ -137,7 +141,7 @@ main {
     padding-left: var(--space-2);
     margin: var(--space-3) 0;
     text-decoration: none;
-    color: var(--black);
+    color: var(--text);
   }
 }
 
