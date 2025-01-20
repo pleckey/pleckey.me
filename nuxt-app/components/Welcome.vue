@@ -8,42 +8,22 @@
       <img class="logos__entry" src="/sanity.svg" alt="Sanity Logo" /> -->
     </div>
     <div class="steps">
-      <h2 class="steps__title">Next steps</h2>
-      <ul class="steps__list">
-        <li class="steps__entry">
-          <h3 class="steps__subtitle">Publish a post in your Studio</h3>
-          <p class="steps__text">
-            Visit the Sanity Studio and publish a new document of type post.
-          </p>
-        </li>
-        <li class="steps__entry">
-          <h3 class="step__title">Dive into the documentation</h3>
-          <p class="steps__text">
-            Check out{{ ' ' }}
-            <a
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              href="https://www.sanity.io/docs"
-            >
-              the documentation </a
-            >{{ ' ' }} to learn more about Sanity.
-          </p>
-        </li>
-        <li class="steps__entry">
-          <h3 class="steps__subtitle">Join the Sanity Community</h3>
-          <p class="steps__text">
-            Leverage{{ ' ' }}
-            <a
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              href="https://www.sanity.io/exchange/community"
-            >
-              our awesome community
-            </a>
-            , and share tips and discuss!
-          </p>
-        </li>
-      </ul>
+      <!-- <h2 class="steps__title">About Me</h2> -->
+
+      <p class="steps__text">
+        Hi there! I’m a senior technical leader with a love for solving tough problems and building meaningful solutions. 
+        I’ve been fortunate to work on exciting projects that bring technology to life in ways that truly make a difference.
+      </p>
+
+      <p class="steps__text">
+        When I’m not in front of a screen, I’m a dad first—spending time with my family is one of my greatest joys. 
+        And when it’s time to unplug and clear my head, I take to the skies in my Cessna 150. 
+        There’s nothing quite like the perspective and freedom that flying brings—it’s my happy place away from the keyboard.
+      </p>
+
+      <p class="steps__text">
+        If any of this resonates with you — whether you share a passion for AI, aviation, or just good conversation — I’d love to connect.
+      </p>
     </div>
   </div>
 </template>
