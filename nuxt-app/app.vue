@@ -10,7 +10,7 @@
 
   <div class="container">
     <header class="header">
-      <a class="header__title" href="/">Nuxt + Sanity</a>
+      <a class="header__title" href="/">Patrick Leckey</a>
     </header>
     <main>
       <NuxtPage />
@@ -33,7 +33,7 @@
             stroke-width="1.2"
           ></path>
         </svg>
-        at Sanity
+        using Nuxt and Sanity.io
       </p>
     </footer>
   </div>
