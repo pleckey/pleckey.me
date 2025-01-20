@@ -89,7 +89,7 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
 
   --white: #fff;
   --black: #101112;
-  --background: #0f3d2e;
+  --background: #1c2f29;
   --text: #f2f7f5;
   --highlight: #39d2b4;
   --gray-200: #ced2d9;

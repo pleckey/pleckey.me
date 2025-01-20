@@ -2,9 +2,10 @@
   <div class="container">
     <div class="logos">
       <div class="logos__blur"></div>
-      <img class="logos__entry" src="/nuxt.svg" alt="Nuxt Logo" />
+      <img class="logos__face" src="/pleckey-face.png" alt="Patrick Leckey" />
+      <!-- <img class="logos__entry" src="/nuxt.svg" alt="Nuxt Logo" />
       <span class="logos__plus">+</span>
-      <img class="logos__entry" src="/sanity.svg" alt="Sanity Logo" />
+      <img class="logos__entry" src="/sanity.svg" alt="Sanity Logo" /> -->
     </div>
     <div class="steps">
       <h2 class="steps__title">Next steps</h2>
@@ -62,10 +63,12 @@
 .steps {
   flex-direction: column;
   width: 100%;
+  min-width: 300px;
 
   & .steps__list {
     list-style-type: none;
     padding: 0;
+    width: 100%;
   }
 
   & .steps__entry {
@@ -87,7 +90,7 @@
     line-height: var(--line-height-2);
 
     & a {
-      color: var(--blue-600);
+      color: var(--highlight);
       text-decoration: none;
     }
   }
@@ -96,12 +99,34 @@
 @media (min-width: 575px) {
   .container {
     width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .steps {
+    min-width: 400px;
+    max-width: var(--max-width-0);
+    display: flex;
+    padding: 0;
+    order: 1;
+    flex: 1;
+    margin-right: var(--space-4);
+
+    & .steps__subtitle {
+      margin-top: var(--space-4);
+    }
+
+    & .steps__list {
+      margin-top: 0;
+    }
   }
 
   .logos {
     display: flex;
     align-items: center;
     margin: var(--space-6) 0 var(--space-5) 0;
+    order: 2;
 
     & .logos__blur {
       display: flex;
@@ -126,19 +151,11 @@
     & .logos__entry {
       display: flex;
     }
-  }
 
-  .steps {
-    max-width: var(--max-width-0);
-    display: flex;
-    padding: 0;
-
-    & .steps__subtitle {
-      margin-top: var(--space-4);
-    }
-
-    & .steps__list {
-      margin-top: 0;
+    & .logos__face {
+      display: flex;
+      width: 100%;
+      margin-left: var(--space-4);
     }
   }
 }
