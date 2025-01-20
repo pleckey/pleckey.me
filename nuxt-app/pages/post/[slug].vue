@@ -1,13 +1,31 @@
 <script setup lang="ts">
-import { type Post } from '~/types/Post'
+import { type Post } from '~/../studio/sanity.types'
 import { PortableText } from '@portabletext/vue'
+import imageUrlBuilder from '@sanity/image-url'
 
 const route = useRoute()
+const sanity = useSanity()
+const builder = imageUrlBuilder(sanity.client)
 
 const query = groq`*[ _type == "post" && slug.current == $slug][0]`
 const { data: post } = await useSanityQuery<Post>(query, {
   slug: route.params.slug,
 })
+
+// Add this component to handle image blocks
+const components = {
+  types: {
+    image: ({ value }) => {
+      return h('figure', [
+        h('img', {
+          src: builder.image(value).width(800).url(),
+          alt: value.alt || '',
+        }),
+        value.caption && h('figcaption', value.caption)
+      ])
+    }
+  }
+}
 </script>
 
 <template>
@@ -24,7 +42,7 @@ const { data: post } = await useSanityQuery<Post>(query, {
       <p class="post__excerpt">{{ post.excerpt }}</p>
       <p class="post__date">{{ formatDate(post._createdAt) }}</p>
       <div v-if="post.body" class="post__content">
-        <PortableText :value="post.body" />
+        <PortableText :value="post.body" :components="components" />
       </div>
     </div>
   </section>

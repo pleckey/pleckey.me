@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Post } from '~/types/Post'
+import { type Post } from '~/../studio/sanity.types'
 
 const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`
 const { data: posts } = await useSanityQuery<Post[]>(query)
