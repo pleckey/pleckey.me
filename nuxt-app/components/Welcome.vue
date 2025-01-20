@@ -2,7 +2,7 @@
   <div class="container">
     <div class="logos">
       <div class="logos__blur"></div>
-      <img class="logos__face" src="/pleckey-face.png" alt="Patrick Leckey" />
+      <img class="logos__face" src="/pleckey-face-real.png" alt="Patrick Leckey" />
       <!-- <img class="logos__entry" src="/nuxt.svg" alt="Nuxt Logo" />
       <span class="logos__plus">+</span>
       <img class="logos__entry" src="/sanity.svg" alt="Sanity Logo" /> -->
@@ -16,9 +16,9 @@
       </p>
 
       <p class="steps__text">
-        When I’m not in front of a screen, I’m a dad first—spending time with my family is one of my greatest joys. 
+        When I’m not in front of a screen, I’m a dad first — spending time with my family is one of my greatest joys. 
         And when it’s time to unplug and clear my head, I take to the skies in my Cessna 150. 
-        There’s nothing quite like the perspective and freedom that flying brings—it’s my happy place away from the keyboard.
+        There’s nothing quite like the perspective and freedom that flying brings — it’s my happy place away from the keyboard.
       </p>
 
       <p class="steps__text">
@@ -135,7 +135,7 @@
     & .logos__face {
       display: flex;
       width: 100%;
-      margin-left: var(--space-4);
+      border-radius: 16px;
     }
   }
 }
