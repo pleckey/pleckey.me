@@ -62,7 +62,7 @@ defineProps<{ post: Post }>()
   & .card__title {
     font-family: var(--font-family-sans);
     font-weight: 800;
-    font-size: var(--font-size-7);
+    font-size: var(--font-size-6);
     line-height: var(--line-height-6);
     letter-spacing: -0.025em;
     margin: var(--space-3) 0;
@@ -71,7 +71,7 @@ defineProps<{ post: Post }>()
   & .card__excerpt {
     font-family: var(--font-family-serif);
     font-weight: 400;
-    font-size: var(--font-size-4);
+    font-size: var(--font-size-2);
     line-height: var(--line-height-3);
     margin-top: 0;
   }
