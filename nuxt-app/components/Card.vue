@@ -7,19 +7,20 @@ defineProps<{ post: Post }>()
 
 <template>
   <NuxtLink class="card" :to="`/post/${post.slug.current}`">
-    <img
-      v-if="post.mainImage"
-      class="card__cover"
-      :src="urlFor(post.mainImage).width(500).height(300).url()"
-      alt="Cover image"
-    />
-
-    <div v-else class="card__cover--none" />
+    <div class="card__image-container">
+      <p class="card__date">{{ formatDate(post._createdAt) }}</p>
+      <img
+        v-if="post.mainImage"
+        class="card__cover"
+        :src="urlFor(post.mainImage).width(500).height(300).url()"
+        alt="Cover image"
+      />
+      <div v-else class="card__cover--none" />
+    </div>
 
     <div class="card__container">
       <h3 class="card__title">{{ post.title }}</h3>
       <p class="card__excerpt">{{ post.excerpt }}</p>
-      <p class="card__date">{{ formatDate(post._createdAt) }}</p>
     </div>
   </NuxtLink>
 </template>
@@ -39,15 +40,22 @@ defineProps<{ post: Post }>()
     margin: 0 var(--space-1) 0;
   }
 
-  & .card__cover {
-    width: 100%;
-    height: 231px;
-    object-fit: cover;
+  & .card__image-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 366.5px;
+    max-width: 366.5px;
   }
 
+  & .card__cover,
   & .card__cover--none {
     width: 100%;
     height: 231px;
+    object-fit: cover;
+    margin-top: var(--space-2);
+  }
+
+  & .card__cover--none {
     background: var(--highlight);
   }
 
@@ -72,7 +80,7 @@ defineProps<{ post: Post }>()
     font-weight: 600;
     font-family: var(--font-family-sans);
     font-size: var(--font-size-1);
-    margin-top: calc(var(----space-4) + 7);
+    margin-top: var(--space-2);
   }
 
   &:hover .card__title {
@@ -93,8 +101,7 @@ defineProps<{ post: Post }>()
 
 @media (min-width: 575px) {
   .card {
-    border: 1px solid #ced2d9;
-    border-bottom: none;
+    border-bottom: 1px solid #ced2d9;
 
     & .card__title {
       margin-top: var(--space-4);
@@ -119,6 +126,15 @@ defineProps<{ post: Post }>()
       min-width: 366.5px;
       max-width: 366.5px;
       max-height: 231px;
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  .card {
+    & .card__image-container {
+      min-width: 100%;
+      max-width: 100%;
     }
   }
 }

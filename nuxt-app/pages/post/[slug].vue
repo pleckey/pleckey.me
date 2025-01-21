@@ -40,7 +40,7 @@ const components = {
     <div v-else class="post__cover--none" />
     <div class="post__container">
       <h1 class="post__title">{{ post.title }}</h1>
-      <p class="post__excerpt">{{ post.excerpt }}</p>
+      <!-- <p class="post__excerpt">{{ post.excerpt }}</p> -->
       <p class="post__date">{{ formatDate(post._createdAt) }}</p>
       <div v-if="post.body" class="post__content">
         <PortableText :value="post.body" :components="components" />
@@ -127,6 +127,7 @@ const components = {
     & .post__cover--none {
       width: 750px;
       height: 380px;
+      border-radius: 16px;
     }
 
     & .post__title {

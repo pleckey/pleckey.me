@@ -8,7 +8,14 @@ const { data: posts } = await useSanityQuery<Post[]>(query)
 <template>
   <section>
     <Welcome />
-    <h2>Latest Posts</h2>
+    <h2 class="latest-posts-header">Latest Posts</h2>
     <Card v-for="post in posts || []" :key="post._id" :post="post" />
   </section>
 </template>
+
+<style scoped>
+.latest-posts-header {
+  padding: 0 var(--space-2);
+  margin: var(--space-4) 0;
+}
+</style>
