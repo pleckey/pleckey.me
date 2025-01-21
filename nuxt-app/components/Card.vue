@@ -8,7 +8,6 @@ defineProps<{ post: Post }>()
 <template>
   <NuxtLink class="card" :to="`/post/${post.slug.current}`">
     <div class="card__image-container">
-      <p class="card__date">{{ formatDate(post._createdAt) }}</p>
       <img
         v-if="post.mainImage"
         class="card__cover"
@@ -19,6 +18,7 @@ defineProps<{ post: Post }>()
     </div>
 
     <div class="card__container">
+      <p class="card__date">{{ formatDate(post._createdAt) }}</p>
       <h3 class="card__title">{{ post.title }}</h3>
       <p class="card__excerpt">{{ post.excerpt }}</p>
     </div>
@@ -43,6 +43,7 @@ defineProps<{ post: Post }>()
   & .card__image-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-width: 366.5px;
     max-width: 366.5px;
   }
@@ -81,7 +82,7 @@ defineProps<{ post: Post }>()
     font-weight: 600;
     font-family: var(--font-family-sans);
     font-size: var(--font-size-1);
-    margin-top: var(--space-2);
+    /* margin-top: var(--space-2); */
   }
 
   &:hover .card__title {
