@@ -73,6 +73,8 @@ defineProps<{ post: Post }>()
     font-size: var(--font-size-2);
     line-height: var(--line-height-3);
     margin-top: 0;
+    border-left: 0.5em solid var(--highlight);
+    padding-left: var(--space-2);
   }
 
   & .card__date {
