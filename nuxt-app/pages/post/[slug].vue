@@ -88,6 +88,28 @@ const components = {
       color: var(--blue-600);
       text-decoration: none;
     }
+
+    & figure {
+      margin: var(--space-6) 0;
+      max-width: 100%;
+    }
+
+    & figure img {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    & figure figcaption {
+      font-family: var(--font-family-sans);
+      font-size: var(--font-size-2);
+      color: var(--gray-600);
+      margin-top: var(--space-2);
+      text-align: center;
+      padding: 0 var(--space-3);
+    }
   }
 
   & .post__title {
@@ -152,6 +174,25 @@ const components = {
 
     & .post__content {
       margin-top: var(--space-7);
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  .post {
+    & .post__content {
+      & figure {
+        margin: var(--space-4) calc(var(--space-3) * -1);
+      }
+
+      & figure img {
+        width: 100%;
+        max-width: none;
+      }
+
+      & figure figcaption {
+        padding: 0 var(--space-3);
+      }
     }
   }
 }

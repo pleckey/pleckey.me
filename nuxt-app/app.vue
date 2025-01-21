@@ -22,6 +22,11 @@
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8v-2zm0-4h8v2H8v-2z"/>
           </svg>
         </a>
+        <!-- <a class="header__social" href="https://bsky.app/profile/pleckey.me" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.002 2L9.99 4.55l-1.824-.664L6.5 7h1.675l-3.138 5.113.947 1.432L10.002 9l3.018 4.545.947-1.432L10.829 7h1.673l-1.666-3.114L9.012 4.55 7 2h5.002zm-1.43 7.495l-2.694 4.07-.437-.662L9.41 9.5H7.244l1.107-2.087 1.245.453L12 4.771l2.404 3.095 1.245-.453L16.756 9.5h-2.166l1.969 3.403-.437.662-2.694-4.07L12 11.729l-1.428-2.234z"/>
+          </svg>
+        </a> -->
       </div>
     </header>
     <main>
