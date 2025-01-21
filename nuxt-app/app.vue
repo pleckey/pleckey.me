@@ -69,7 +69,7 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
   --space-8: 136px;
   --space-9: 220px;
 
-  --font-family-sans: Inter;
+  --font-family-sans: Outfit;
   --font-family-serif: PT Serif;
   --font-family-mono: IBM Plex Mono;
 
@@ -101,9 +101,9 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
 
   --white: #fff;
   --black: #101112;
-  --background: #1c2f29;
-  --text: #f2f7f5;
-  --highlight: #39d2b4;
+  --background: #242a30;
+  --text: #f0e6dc;
+  --highlight: #819a9d;
   --gray-200: #ced2d9;
   --gray-600: #6e7683;
   --blue-600: #1e61cd;
@@ -139,7 +139,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--space-1);
-  border-bottom: 1px solid #ced2d9;
+  border-bottom: 1px solid var(--highlight);
 
   z-index: 10;
   background: var(--background);

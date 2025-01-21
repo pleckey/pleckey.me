@@ -20,6 +20,7 @@ const components = {
         h('img', {
           src: builder.image(value).width(800).url(),
           alt: value.alt || '',
+          class: 'post__image',
         }),
         value.caption && h('figcaption', value.caption)
       ])
@@ -69,7 +70,7 @@ const components = {
   }
 
   & .post__content {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-sans);
     font-weight: 400;
     font-size: var(--font-size-4);
     line-height: var(--line-height-5);
@@ -112,6 +113,11 @@ const components = {
     font-size: var(--font-size-1);
     line-height: var(--line-height-1);
     margin-top: var(--space-4);
+  }
+
+  & .post__image {
+    width: 100%;
+    height: auto;
   }
 }
 

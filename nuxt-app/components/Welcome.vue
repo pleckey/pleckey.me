@@ -66,7 +66,7 @@
   }
 
   & .steps__text {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-sans);
     line-height: var(--line-height-2);
 
     & a {
