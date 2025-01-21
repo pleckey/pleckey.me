@@ -68,7 +68,7 @@ defineProps<{ post: Post }>()
   }
 
   & .card__excerpt {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-sans);
     font-weight: 400;
     font-size: var(--font-size-2);
     line-height: var(--line-height-3);
