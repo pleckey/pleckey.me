@@ -151,7 +151,7 @@ useHead({
   .post {
     & .post__cover,
     & .post__cover--none {
-      width: 750px;
+      width: 800px;
       height: 380px;
       border-radius: 16px;
     }
