@@ -128,7 +128,7 @@ useHead({
   --magenta-100: #f9d7eb;
 
   --max-width-0: 320px;
-  --max-width-1: 768px;
+  --max-width-1: 800px;
 }
 
 html {

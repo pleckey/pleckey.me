@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-2) var(--space-2);
+  padding: var(--space-7) var(--space-2);
 }
 
 .logos {
