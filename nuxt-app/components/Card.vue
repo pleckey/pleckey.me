@@ -32,7 +32,7 @@ defineProps<{ post: Post }>()
   padding: var(--space-2);
   margin-bottom: var(--space-6);
   position: relative;
-  border-bottom: 1px solid var(--highlight);
+  /* border-bottom: 1px solid var(--highlight); */
   color: var(--text);
   text-decoration: none;
 
@@ -102,9 +102,10 @@ defineProps<{ post: Post }>()
 
 @media (min-width: 575px) {
   .card {
-    border-bottom: 1px solid var(--highlight);
+    /* border-bottom: 1px solid var(--highlight); */
 
     &:last-child {
+      padding-bottom: var(--space-6);
       border-bottom: 1px solid var(--highlight);
     }
   }
