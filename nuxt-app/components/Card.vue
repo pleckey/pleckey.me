@@ -30,9 +30,9 @@ defineProps<{ post: Post }>()
   display: flex;
   flex-direction: column;
   padding: var(--space-2);
-  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
   position: relative;
-  border-bottom: 1px solid #ced2d9;
+  border-bottom: 1px solid var(--highlight);
   color: var(--text);
   text-decoration: none;
 
@@ -82,7 +82,6 @@ defineProps<{ post: Post }>()
     font-weight: 600;
     font-family: var(--font-family-sans);
     font-size: var(--font-size-1);
-    /* margin-top: var(--space-2); */
   }
 
   &:hover .card__title {
@@ -103,14 +102,10 @@ defineProps<{ post: Post }>()
 
 @media (min-width: 575px) {
   .card {
-    border-bottom: 1px solid #ced2d9;
-
-    & .card__title {
-      margin-top: var(--space-5);
-    }
+    border-bottom: 1px solid var(--highlight);
 
     &:last-child {
-      border-bottom: 1px solid #ced2d9;
+      border-bottom: 1px solid var(--highlight);
     }
   }
 }
