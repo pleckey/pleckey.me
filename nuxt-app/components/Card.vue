@@ -30,7 +30,7 @@ defineProps<{ post: Post }>()
   display: flex;
   flex-direction: column;
   padding: var(--space-2);
-  padding: 9px;
+  padding-bottom: var(--space-4);
   position: relative;
   border-bottom: 1px solid #ced2d9;
   color: var(--text);
@@ -52,7 +52,6 @@ defineProps<{ post: Post }>()
     width: 100%;
     height: 231px;
     object-fit: cover;
-    margin-top: var(--space-2);
   }
 
   & .card__cover--none {
@@ -104,7 +103,7 @@ defineProps<{ post: Post }>()
     border-bottom: 1px solid #ced2d9;
 
     & .card__title {
-      margin-top: var(--space-4);
+      margin-top: var(--space-5);
     }
 
     &:last-child {
