@@ -59,6 +59,19 @@
 <script setup lang="ts">
 const route = useRoute()
 const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
+
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | Patrick Leckey` : 'Patrick Leckey'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/webp',
+      href: '/pleckey-favicon.webp'
+    }
+  ]
+})
 </script>
 
 <style>

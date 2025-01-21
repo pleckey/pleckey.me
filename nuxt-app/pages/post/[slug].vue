@@ -27,6 +27,10 @@ const components = {
     }
   }
 }
+
+useHead({
+  title: post.value?.title || 'Patrick Leckey'
+})
 </script>
 
 <template>
