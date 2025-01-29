@@ -33,6 +33,12 @@
       <NuxtPage />
     </main>
     <footer class="footer">
+      <a href="/api/feed" class="footer__rss" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27zm0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93z"/>
+        </svg>
+        RSS Feed
+      </a>
       <p class="footer__text">
         Made with
         <svg
@@ -179,16 +185,31 @@ main {
 
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 var(--space-3);
+}
 
-  & .footer__text {
-    font-size: var(--font-size-1);
-    line-height: var(--line-height-1);
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
+.footer__rss {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-1);
+  line-height: var(--line-height-1);
+}
+
+.footer__rss:hover {
+  color: var(--highlight);
+}
+
+.footer__text {
+  font-size: var(--font-size-1);
+  line-height: var(--line-height-1);
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 @media (min-width: 575px) {
