@@ -42,23 +42,9 @@ export default defineNuxtConfig({
   }, 
 
   sitemap: {
-    urls: async () => {
-      //const sanityClient = require('@sanity/client');
-      const client = await createClient({
-        projectId: process.env.NUXT_SANITY_PROJECT_ID,
-        dataset: process.env.NUXT_SANITY_DATASET,
-        useCdn: true,
-        apiVersion: process.env.NUXT_SANITY_API_VERSION || compatibilityDate,
-      });
-      const query = '*[_type == "post"] { slug, _updatedAt }';
-      const blogposts= await client.fetch(query);
-      return blogposts.map((post: any) => ({
-        url: `/post/${post.slug.current}`,
-        lastmod: post._updatedAt,
-        changefreq: 'weekly',
-        priority: 0.8,
-      }));
-    },
+    sources: [
+      '/api/posts',
+    ],
   },
 
   compatibilityDate,
