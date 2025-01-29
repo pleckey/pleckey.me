@@ -46,6 +46,7 @@ export default defineNuxtConfig({
         projectId: process.env.NUXT_SANITY_PROJECT_ID,
         dataset: process.env.NUXT_SANITY_DATASET,
         useCdn: true,
+        apiVersion: process.env.NUXT_SANITY_API_VERSION || '2024-03-15',
       });
       const query = '*[_type == "post"] { slug, _updatedAt }';
       const blogposts= await client.fetch(query);
