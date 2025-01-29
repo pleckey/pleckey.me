@@ -1,6 +1,6 @@
 // server/routes/rss.ts
 import RSS from 'rss';
-import { createClient } from '@sanity/client';
+import { type Post } from '~/../studio/sanity.types';
 
 export default defineEventHandler(async (event) => {
     try {
@@ -9,21 +9,16 @@ export default defineEventHandler(async (event) => {
         const feed = new RSS({
             title: 'Patrick Leckey',
             site_url: 'https://pleckey.me', // link to your website/blog
-            feed_url: `https://pleckey.me/feed`, // path to your rss feed
+            feed_url: 'https://pleckey.me/feed', // path to your rss feed
         });
-        
+
         // fetch data from dev.to
         const query = '*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)';
-        const sanity = createClient({
-            projectId: config.public.sanity.projectId,
-            dataset: config.public.sanity.dataset,
-            apiVersion: config.public.sanity.apiVersion,
-            useCdn: true,
-        });
-        const blogposts = await sanity.fetch(query);
+        const client = useSanity().client;
+        const blogposts = await client.fetch<Post[]>(query);
 
         if (blogposts) {
-            blogposts.forEach((post: any) => {
+            blogposts.map((post: any) => {
                 feed.item({
                     title: post.title || 'Untitled Post',
                     url: `https://pleckey.me/post/${post.slug?.current || ''}`,
