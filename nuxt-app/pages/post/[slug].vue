@@ -15,7 +15,7 @@ const { data: post } = await useSanityQuery<Post>(query, {
 // Add this component to handle image blocks
 const components = {
   types: {
-    image: ({ value }) => {
+    image: ({ value }: { value: any }) => {
       return h('figure', [
         h('img', {
           src: builder.image(value).width(800).url(),
@@ -38,7 +38,7 @@ useHead({
     <img
       v-if="post.mainImage"
       class="post__cover"
-      :src="$urlFor(post.mainImage).width(1920).url()"
+      :src="$urlFor(post.mainImage as any).width(1920).url()"
       alt="Cover image"
     />
     <div v-else class="post__cover--none" />
