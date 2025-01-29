@@ -11,18 +11,22 @@
       <!-- <h2 class="steps__title">About Me</h2> -->
 
       <p class="steps__text">
-        Hi there! I’m a senior technical leader with a love for solving tough problems and building meaningful solutions. 
-        I’ve been fortunate to work on exciting projects that bring technology to life in ways that truly make a difference.
+        Hi there! I’m a senior technical leader with a love for solving tough problems and building meaningful
+        solutions.
+        I’ve been fortunate to work on exciting projects that bring technology to life in ways that truly make a
+        difference.
       </p>
 
       <p class="steps__text">
-        When I’m not in front of a screen, I’m a dad first — spending time with my family is one of my greatest joys. 
-        And when it’s time to unplug and clear my head, I take to the skies in my Cessna 150. 
-        There’s nothing quite like the perspective and freedom that flying brings — it’s my happy place away from the keyboard.
+        When I’m not in front of a screen, I’m a dad first — spending time with my family is one of my greatest joys.
+        And when it’s time to unplug and clear my head, I take to the skies in my Cessna 150.
+        There’s nothing quite like the perspective and freedom that flying brings — it’s my happy place away from the
+        keyboard.
       </p>
 
       <p class="steps__text">
-        If any of this resonates with you — whether you share a passion for AI, aviation, or just good conversation — I’d love to connect.
+        If any of this resonates with you — whether you share a passion for AI, aviation, or just good conversation —
+        I’d love to connect.
       </p>
     </div>
   </div>

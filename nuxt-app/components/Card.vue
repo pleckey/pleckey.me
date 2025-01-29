@@ -1,19 +1,15 @@
 <script lang="ts" setup>
-import { type Post } from '~/../studio/sanity.types'
-import { formatDate, urlFor } from '~/utils'
+import { type Post } from '~/../studio/sanity.types';
+import { formatDate, urlFor } from '~/utils';
 
-defineProps<{ post: Post }>()
+defineProps<{ post: Post; }>();
 </script>
 
 <template>
   <NuxtLink class="card" :to="`/post/${post.slug?.current || ''}`">
     <div class="card__image-container">
-      <img
-        v-if="post.mainImage"
-        class="card__cover"
-        :src="urlFor(post.mainImage as any).width(500).height(300).url()"
-        alt="Cover image"
-      />
+      <img v-if="post.mainImage" class="card__cover" :src="urlFor(post.mainImage as any).width(500).height(300).url()"
+        alt="Cover image" />
       <div v-else class="card__cover--none" />
     </div>
 

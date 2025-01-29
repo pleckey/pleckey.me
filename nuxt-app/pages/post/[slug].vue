@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { type Post } from '~/../studio/sanity.types'
-import { PortableText } from '@portabletext/vue'
-import imageUrlBuilder from '@sanity/image-url'
+import { type Post } from '~/../studio/sanity.types';
+import { PortableText } from '@portabletext/vue';
+import imageUrlBuilder from '@sanity/image-url';
 
-const route = useRoute()
-const sanity = useSanity()
-const builder = imageUrlBuilder(sanity.client)
+const route = useRoute();
+const sanity = useSanity();
+const builder = imageUrlBuilder(sanity.client);
 
-const query = groq`*[ _type == "post" && slug.current == $slug][0]`
+const query = groq`*[ _type == "post" && slug.current == $slug][0]`;
 const { data: post } = await useSanityQuery<Post>(query, {
   slug: route.params.slug,
-})
+});
 
 // Add this component to handle image blocks
 const components = {
   types: {
-    image: ({ value }: { value: any }) => {
+    image: ({ value }: { value: any; }) => {
       return h('figure', [
         h('img', {
           src: builder.image(value).width(800).url(),
@@ -23,24 +23,20 @@ const components = {
           class: 'post__image',
         }),
         value.caption && h('figcaption', value.caption)
-      ])
+      ]);
     }
   }
-}
+};
 
 useHead({
   title: post.value?.title || 'Patrick Leckey'
-})
+});
 </script>
 
 <template>
   <section v-if="post" class="post">
-    <img
-      v-if="post.mainImage"
-      class="post__cover"
-      :src="$urlFor(post.mainImage as any).width(1920).url()"
-      alt="Cover image"
-    />
+    <img v-if="post.mainImage" class="post__cover" :src="$urlFor(post.mainImage as any).width(1920).url()"
+      alt="Cover image" />
     <div v-else class="post__cover--none" />
     <div class="post__container">
       <h1 class="post__title">{{ post.title }}</h1>
@@ -149,6 +145,7 @@ useHead({
 
 @media (min-width: 800px) {
   .post {
+
     & .post__cover,
     & .post__cover--none {
       width: 800px;

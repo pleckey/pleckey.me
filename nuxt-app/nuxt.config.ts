@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { createClient } from '@sanity/client';
-
 const compatibilityDate = '2024-12-17' as const;
 
 export default defineNuxtConfig({
@@ -15,7 +13,7 @@ export default defineNuxtConfig({
         inject: true,
       },
     },
-  ], '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  ], '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
 
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
@@ -36,10 +34,10 @@ export default defineNuxtConfig({
     },
   },
 
-  site: { 
-    url: 'https://pleckey.me', 
-    name: 'Patrick Leckey' 
-  }, 
+  site: {
+    url: 'https://pleckey.me',
+    name: 'Patrick Leckey'
+  },
 
   sitemap: {
     sources: [
@@ -47,5 +45,9 @@ export default defineNuxtConfig({
     ],
   },
 
+  gtag: {
+    enabled: process.env.NUXT_PUBLIC_GTAG_ID ? true : false,
+  },
+
   compatibilityDate,
-})
+});

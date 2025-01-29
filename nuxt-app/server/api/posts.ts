@@ -1,5 +1,5 @@
 import { defineSitemapEventHandler } from '#imports';
-import type { SitemapUrlInput } from '#sitemap/types';
+import type { SitemapUrl } from '#sitemap/types';
 import { type Post } from '~/../studio/sanity.types';
 
 export default defineSitemapEventHandler(async () => {
@@ -11,5 +11,5 @@ export default defineSitemapEventHandler(async () => {
         lastmod: post._updatedAt,
         changefreq: 'weekly',
         priority: 0.8,
-    }) satisfies SitemapUrlInput[]);
+    }) satisfies SitemapUrl[]);
 });

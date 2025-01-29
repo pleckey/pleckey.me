@@ -1,9 +1,5 @@
 <template>
-  <a
-    v-if="previewEnabled && !inFrame"
-    :href="`/preview/disable?redirect=${route.fullPath}`"
-    class="preview-toggle"
-  >
+  <a v-if="previewEnabled && !inFrame" :href="`/preview/disable?redirect=${route.fullPath}`" class="preview-toggle">
     <span>Preview Enabled</span>
     <span>Disable Preview</span>
   </a>
@@ -14,12 +10,15 @@
       <div class="header__social-container">
         <a class="header__social" href="https://linkedin.com/in/patrickleckey" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+            <path
+              d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+            </path>
           </svg>
         </a>
         <a class="header__social" href="/pleckey-cv.pdf" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8v-2zm0-4h8v2H8v-2z"/>
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8v-2zm0-4h8v2H8v-2z" />
           </svg>
         </a>
         <!-- <a class="header__social" href="https://bsky.app/profile/pleckey.me" target="_blank" rel="noopener">
@@ -35,26 +34,18 @@
     <footer class="footer">
       <a href="/api/feed" class="footer__rss" title="RSS Feed">
         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27zm0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93z"/>
+          <path
+            d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27zm0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93z" />
         </svg>
         RSS
       </a>
       <p class="footer__text">
         Made with
-        <svg
-          data-sanity-icon="heart-filled"
-          width="1em"
-          height="1em"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg data-sanity-icon="heart-filled" width="1em" height="1em" viewBox="0 0 25 25" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <path
             d="M17 16C15.8 17.3235 12.5 20.5 12.5 20.5C12.5 20.5 9.2 17.3235 8 16C5.2 12.9118 4.5 11.7059 4.5 9.5C4.5 7.29412 6.1 5.5 8.5 5.5C10.5 5.5 11.7 6.82353 12.5 8.14706C13.3 6.82353 14.5 5.5 16.5 5.5C18.9 5.5 20.5 7.29412 20.5 9.5C20.5 11.7059 19.8 12.9118 17 16Z"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1.2"
-          ></path>
+            fill="currentColor" stroke="currentColor" stroke-width="1.2"></path>
         </svg>
         using Nuxt and Sanity.io
       </p>
@@ -63,12 +54,12 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
+const route = useRoute();
+const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState();
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | Patrick Leckey` : 'Patrick Leckey'
+    return titleChunk ? `${titleChunk} | Patrick Leckey` : 'Patrick Leckey';
   },
   link: [
     {
@@ -77,7 +68,7 @@ useHead({
       href: '/pleckey-favicon.webp'
     }
   ]
-})
+});
 </script>
 
 <style>
@@ -271,6 +262,7 @@ main {
 .preview-toggle span:first-child {
   display: block;
 }
+
 .preview-toggle:hover span:first-child {
   display: none;
 }
@@ -278,6 +270,7 @@ main {
 .preview-toggle span:last-child {
   display: none;
 }
+
 .preview-toggle:hover span:last-child {
   display: block;
 }

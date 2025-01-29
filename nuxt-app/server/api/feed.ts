@@ -8,8 +8,8 @@ export default defineEventHandler(async (event) => {
         // create new rss feed this will be our channel tag with website title and url
         const feed = new RSS({
             title: 'Patrick Leckey',
-            site_url: 'https://pleckey.me', // link to your website/blog
-            feed_url: 'https://pleckey.me/feed', // path to your rss feed
+            site_url: process.env.SITE_URL || 'https://pleckey.me', // link to your website/blog
+            feed_url: `${process.env.SITE_URL || 'https://pleckey.me'}/feed`, // path to your rss feed
         });
 
         // fetch data from dev.to
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
             blogposts.map((post: any) => {
                 feed.item({
                     title: post.title || 'Untitled Post',
-                    url: `https://pleckey.me/post/${post.slug?.current || ''}`,
+                    url: `${process.env.SITE_URL || 'https://pleckey.me'}/post/${post.slug?.current || ''}`,
                     date: post._createdAt || new Date(),
                     description: post.excerpt || '',
                 });
