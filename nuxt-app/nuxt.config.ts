@@ -2,18 +2,24 @@
 const compatibilityDate = '2024-12-17' as const;
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/sanity', [
-    '@nuxtjs/google-fonts',
-    {
-      families: {
-        'IBM Plex Mono': [500, 700],
-        Outfit: [400, 700, 800],
-        'PT Serif': [400, 700],
-        download: true,
-        inject: true,
+  modules: [
+    '@nuxtjs/sanity',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          'IBM Plex Mono': [500, 700],
+          Outfit: [400, 700, 800],
+          'PT Serif': [400, 700],
+          download: true,
+          inject: true,
+        },
       },
-    },
-  ], '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
+    ],
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    'nuxt-gtag'
+  ],
 
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
