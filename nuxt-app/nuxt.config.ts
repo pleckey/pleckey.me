@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { createClient } from '@sanity/client';
 
+const compatibilityDate = '2024-12-17' as const;
+
 export default defineNuxtConfig({
   modules: ['@nuxtjs/sanity', [
     '@nuxtjs/google-fonts',
@@ -19,7 +21,7 @@ export default defineNuxtConfig({
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
     dataset: process.env.NUXT_SANITY_DATASET,
     useCdn: true, // `false` if you want to ensure fresh data
-    apiVersion: process.env.NUXT_SANITY_API_VERSION || '2024-03-15',
+    apiVersion: process.env.NUXT_SANITY_API_VERSION || compatibilityDate,
     visualEditing: {
       studioUrl: process.env.NUXT_SANITY_STUDIO_URL || 'http://localhost:3333',
       token: process.env.NUXT_SANITY_API_READ_TOKEN,
@@ -46,7 +48,7 @@ export default defineNuxtConfig({
         projectId: process.env.NUXT_SANITY_PROJECT_ID,
         dataset: process.env.NUXT_SANITY_DATASET,
         useCdn: true,
-        apiVersion: process.env.NUXT_SANITY_API_VERSION || '2024-03-15',
+        apiVersion: process.env.NUXT_SANITY_API_VERSION || compatibilityDate,
       });
       const query = '*[_type == "post"] { slug, _updatedAt }';
       const blogposts= await client.fetch(query);
@@ -59,5 +61,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-12-17',
+  compatibilityDate,
 })
