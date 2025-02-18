@@ -138,6 +138,10 @@ html {
 body {
   margin: 0;
 }
+
+a, a:visited, a:hover {
+  color: var(--highlight);
+}
 </style>
 
 <style scoped>
