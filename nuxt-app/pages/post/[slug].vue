@@ -3,12 +3,30 @@ import { type Post } from '~/../studio/sanity.types';
 import { PortableText } from '@portabletext/vue';
 import { createImageUrlBuilder } from '@sanity/image-url';
 
+interface AdjacentPost {
+  title?: string;
+  slug?: string;
+}
+
+type PostWithNeighbors = Post & {
+  prevPost: AdjacentPost | null;
+  nextPost: AdjacentPost | null;
+};
+
 const route = useRoute();
 const sanity = useSanity();
 const builder = createImageUrlBuilder(sanity.client);
 
-const query = groq`*[ _type == "post" && slug.current == $slug][0]`;
-const { data: post } = await useSanityQuery<Post>(query, {
+const query = groq`*[ _type == "post" && slug.current == $slug ][0]{
+  ...,
+  "prevPost": *[
+    _type == "post" && defined(slug.current) && _createdAt < ^._createdAt
+  ] | order(_createdAt desc)[0]{ title, "slug": slug.current },
+  "nextPost": *[
+    _type == "post" && defined(slug.current) && _createdAt > ^._createdAt
+  ] | order(_createdAt asc)[0]{ title, "slug": slug.current }
+}`;
+const { data: post } = await useSanityQuery<PostWithNeighbors>(query, {
   slug: route.params.slug,
 });
 
@@ -45,6 +63,7 @@ useHead({
       <div v-if="post.body" class="post__content">
         <PortableText :value="post.body" :components="components" />
       </div>
+      <PostNavigation :prev-post="post.prevPost" :next-post="post.nextPost" />
     </div>
   </section>
 </template>
