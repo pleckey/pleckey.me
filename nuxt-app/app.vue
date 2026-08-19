@@ -118,13 +118,12 @@ useHead({
 
   --white: #fff;
   --black: #101112;
-  --background: #242a30;
-  --text: #f0e6dc;
-  --highlight: #819a9d;
+  --background: #1b1f24;
+  --text: #f5efe7;
+  --highlight: #e8a856;
   --gray-200: #ced2d9;
-  --gray-600: #6e7683;
-  --blue-600: #1e61cd;
-  --magenta-100: #f9d7eb;
+  --gray-600: #a3acb8;
+  --magenta-100: #f7ddb8;
 
   --max-width-0: 320px;
   --max-width-1: 800px;

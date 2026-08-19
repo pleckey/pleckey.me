@@ -90,10 +90,9 @@ useHead({
 
   & .post__content {
     font-family: var(--font-family-sans);
-    font-weight: 400;
+    font-weight: 500;
     font-size: var(--font-size-4);
     line-height: var(--line-height-5);
-    letter-spacing: -0.02em;
     margin-top: var(--space-6);
 
     /* Targeting tags in PortableText */
@@ -104,7 +103,7 @@ useHead({
     }
 
     & a {
-      color: var(--blue-600);
+      color: var(--highlight);
       text-decoration: none;
     }
 
