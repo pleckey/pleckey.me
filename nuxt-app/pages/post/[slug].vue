@@ -95,24 +95,92 @@ useHead({
     line-height: var(--line-height-5);
     margin-top: var(--space-6);
 
-    /* Targeting tags in PortableText */
-    & blockquote {
-      border-left: 5px solid var(--black);
+    /* Targeting tags rendered by <PortableText>: not part of this
+       component's own template, so scoped styles need :deep() or the
+       generated data-v attribute never lands on them and the rule is dead. */
+    & :deep(p) {
+      margin: 0 0 var(--space-4);
+    }
+
+    & :deep(h1),
+    & :deep(h2),
+    & :deep(h3),
+    & :deep(h4) {
+      font-family: var(--font-family-sans);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: var(--space-6) 0 var(--space-3);
+    }
+
+    & > :deep(h1:first-child),
+    & > :deep(h2:first-child),
+    & > :deep(h3:first-child),
+    & > :deep(h4:first-child) {
+      margin-top: 0;
+    }
+
+    & :deep(h1) {
+      font-size: var(--font-size-8);
+      line-height: var(--line-height-8);
+    }
+
+    & :deep(h2) {
+      font-size: var(--font-size-7);
+      line-height: var(--line-height-7);
+    }
+
+    & :deep(h3) {
+      font-size: var(--font-size-6);
+      line-height: var(--line-height-6);
+    }
+
+    & :deep(h4) {
+      font-size: var(--font-size-5);
+      line-height: var(--line-height-4);
+      color: var(--highlight);
+    }
+
+    & :deep(strong), & :deep(b) {
+      font-weight: 800;
+    }
+
+    & :deep(em), & :deep(i) {
+      font-style: italic;
+    }
+
+    & :deep(ul), & :deep(ol) {
+      margin: 0 0 var(--space-4);
+      padding-left: var(--space-5);
+    }
+
+    & :deep(li) {
+      margin-bottom: var(--space-2);
+    }
+
+    & :deep(li:last-child) {
+      margin-bottom: 0;
+    }
+
+    & :deep(blockquote) {
+      border-left: 5px solid var(--highlight);
       padding-left: var(--space-3);
       margin-left: var(--space-4);
+      color: var(--gray-200);
+      font-style: italic;
     }
 
-    & a {
+    & :deep(a) {
       color: var(--highlight);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
     }
 
-    & figure {
+    & :deep(figure) {
       margin: var(--space-6) 0;
       max-width: 100%;
     }
 
-    & figure img {
+    & :deep(figure img) {
       width: 100%;
       height: auto;
       max-width: 800px;
@@ -120,7 +188,7 @@ useHead({
       margin: 0 auto;
     }
 
-    & figure figcaption {
+    & :deep(figure figcaption) {
       font-family: var(--font-family-sans);
       font-size: var(--font-size-2);
       color: var(--gray-600);
@@ -200,16 +268,16 @@ useHead({
 @media (max-width: 799px) {
   .post {
     & .post__content {
-      & figure {
+      & :deep(figure) {
         margin: var(--space-4) calc(var(--space-3) * -1);
       }
 
-      & figure img {
+      & :deep(figure img) {
         width: 100%;
         max-width: none;
       }
 
-      & figure figcaption {
+      & :deep(figure figcaption) {
         padding: 0 var(--space-3);
       }
     }
