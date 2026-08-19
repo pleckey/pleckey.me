@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       {
         families: {
           'IBM Plex Mono': [500, 700],
-          Outfit: [400, 700, 800],
+          Outfit: [400, 500, 700, 800],
           'PT Serif': [400, 700],
           download: true,
           inject: true,
