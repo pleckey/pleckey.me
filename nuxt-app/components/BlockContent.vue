@@ -10,5 +10,5 @@ export default {
 </script>
 
 <template>
-  <SanityContent :blocks="blocks" />
+  <SanityContent :value="blocks" />
 </template>

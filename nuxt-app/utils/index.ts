@@ -1,4 +1,4 @@
-import imageUrlBuilder from '@sanity/image-url'
+import { createImageUrlBuilder } from '@sanity/image-url'
 import type { Image } from '@sanity/types'
 
 export function formatDate(date: string) {
@@ -11,6 +11,6 @@ export function formatDate(date: string) {
 
 export function urlFor(source: Image) {
   const sanity = useSanity()
-  const builder = imageUrlBuilder(sanity.client)
+  const builder = createImageUrlBuilder(sanity.client)
   return builder.image(source)
 }

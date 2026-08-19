@@ -55,7 +55,9 @@
 
 <script setup lang="ts">
 const route = useRoute();
-const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState();
+const visualEditingState = useSanityVisualEditingState();
+const previewEnabled = computed(() => visualEditingState?.enabled ?? false);
+const inFrame = computed(() => visualEditingState?.inFrame ?? false);
 
 useHead({
   titleTemplate: (titleChunk) => {

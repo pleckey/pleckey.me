@@ -33,6 +33,12 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    ssr: {
+      noExternal: ['@sanity/core-loader', '@sanity/visual-editing-csm'],
+    },
+  },
+
   postcss: {
     plugins: {
       autoprefixer: {},

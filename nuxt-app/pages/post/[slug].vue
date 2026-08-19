@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { type Post } from '~/../studio/sanity.types';
 import { PortableText } from '@portabletext/vue';
-import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
 const route = useRoute();
 const sanity = useSanity();
-const builder = imageUrlBuilder(sanity.client);
+const builder = createImageUrlBuilder(sanity.client);
 
 const query = groq`*[ _type == "post" && slug.current == $slug][0]`;
 const { data: post } = await useSanityQuery<Post>(query, {

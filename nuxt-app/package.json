@@ -10,17 +10,18 @@
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/sanity": "^1.13.1",
-    "@portabletext/vue": "^1.0.11",
-    "@sanity/image-url": "^1.1.0",
+    "@nuxtjs/sanity": "^2.5.0",
+    "@portabletext/vue": "^2.0.0",
+    "@sanity/image-url": "^2.1.1",
     "@types/rss": "^0.0.32",
-    "groq": "^3.67.1",
+    "groq": "^6.10.1",
     "rss": "^1.2.2"
   },
   "devDependencies": {
     "@nuxtjs/robots": "^5.2.2",
     "@nuxtjs/sitemap": "^7.2.4",
-    "@sanity/types": "^3.67.1",
+    "@sanity/browserslist-config": "^1.0.5",
+    "@sanity/types": "^6.10.1",
     "@types/node": "^20.9.0",
     "nuxt": "^3.15.2",
     "nuxt-gtag": "^3.0.2",
