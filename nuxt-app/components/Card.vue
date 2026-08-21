@@ -33,6 +33,8 @@ defineProps<{ post: Post; }>();
   text-decoration: none;
 
   & .card__container {
+    display: flex;
+    flex-direction: column;
     margin: 0 var(--space-1) 0;
   }
 
@@ -69,7 +71,9 @@ defineProps<{ post: Post; }>();
     font-weight: 500;
     font-size: var(--font-size-2);
     line-height: var(--line-height-3);
+    flex: 1;
     margin-top: 0;
+    margin-bottom: 0;
     border-left: 0.5em solid var(--highlight);
     padding-left: var(--space-2);
   }
