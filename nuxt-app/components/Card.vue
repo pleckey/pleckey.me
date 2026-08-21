@@ -119,6 +119,18 @@ defineProps<{ post: Post; }>();
       margin: 0 var(--space-4) 0;
     }
 
+    & .card__image-container {
+      justify-content: flex-start;
+    }
+
+    & .card__date {
+      margin: 0;
+    }
+
+    & .card__title {
+      margin-top: var(--space-2);
+    }
+
     & .card__cover,
     & .card__cover--none {
       min-width: 366.5px;
