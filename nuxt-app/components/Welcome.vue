@@ -120,7 +120,7 @@
       position: absolute;
       width: 375px;
       height: 115px;
-      background: var(--magenta-100);
+      background: var(--glow);
       filter: blur(82px);
       transform: rotate(-19deg);
       z-index: -1;

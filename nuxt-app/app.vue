@@ -117,13 +117,13 @@ useHead({
   --line-height-12: 128px;
 
   --white: #fff;
-  --black: #101112;
-  --background: #1b1f24;
-  --text: #f5efe7;
-  --highlight: #e8a856;
-  --gray-200: #ced2d9;
-  --gray-600: #a3acb8;
-  --magenta-100: #f7ddb8;
+  --black: #0c1512;
+  --background: #14201c;
+  --text: #e9f2ec;
+  --highlight: #4fd191;
+  --gray-200: #c5d2cb;
+  --gray-600: #8fa398;
+  --glow: #baead3;
 
   --max-width-0: 320px;
   --max-width-1: 800px;
